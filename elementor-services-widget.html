@@ -1,0 +1,176 @@
+<!--
+  ווידג'ט שירותים – "אז מה אפשר לעשות עבורכם?"
+  שימוש: באלמנטור גוררים ווידג'ט "HTML" ומדביקים את כל תוכן הקובץ.
+  להחלפת תמונות: מחליפים את כתובות ה-src בכתובות מספריית המדיה של וורדפרס.
+  להחלפת קישורים: מחליפים את href="#" בכתובות העמודים.
+-->
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  .sc-services {
+    --sc-card-bg: #f4f4f7;
+    --sc-card-radius: 8px;
+    --sc-title-color: #3b2b3d;
+    --sc-text-color: #5a5a5a;
+    --sc-image-size: 292px;
+    --sc-gap: 20px;
+    direction: rtl;
+    width: 100%;
+    font-family: "Heebo", "Assistant", Arial, sans-serif;
+  }
+
+  .sc-services *,
+  .sc-services *::before,
+  .sc-services *::after {
+    box-sizing: border-box;
+  }
+
+  .sc-services .sc-services__title {
+    margin: 0 0 32px;
+    padding: 0;
+    text-align: center;
+    font-family: inherit;
+    font-size: 36px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.3;
+    color: var(--sc-title-color);
+  }
+
+  .sc-services .sc-services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sc-gap);
+  }
+
+  /* ----- כרטיס ----- */
+  .sc-services .sc-service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 592px;
+    padding: 80px 24px 48px;
+    background: var(--sc-card-bg);
+    border-radius: var(--sc-card-radius);
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .sc-services .sc-service-card:hover,
+  .sc-services .sc-service-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(59, 43, 61, 0.1);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .sc-services .sc-service-card__image {
+    width: var(--sc-image-size);
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e2e2e8;
+    flex-shrink: 0;
+  }
+
+  .sc-services .sc-service-card__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .sc-services .sc-service-card:hover .sc-service-card__image img {
+    transform: scale(1.06);
+  }
+
+  .sc-services .sc-service-card__title {
+    margin: 40px 0 6px;
+    padding: 0;
+    font-family: inherit;
+    font-size: 28px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.35;
+    color: var(--sc-title-color);
+  }
+
+  .sc-services .sc-service-card__text {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--sc-text-color);
+  }
+
+  /* ----- טאבלט ----- */
+  @media (max-width: 1024px) {
+    .sc-services { --sc-image-size: 220px; }
+
+    .sc-services .sc-service-card {
+      min-height: 480px;
+      padding-top: 56px;
+    }
+
+    .sc-services .sc-service-card__title { font-size: 24px; }
+  }
+
+  /* ----- מובייל ----- */
+  @media (max-width: 767px) {
+    .sc-services .sc-services__title { font-size: 28px; }
+
+    .sc-services .sc-services__grid { grid-template-columns: 1fr; }
+
+    .sc-services .sc-service-card {
+      min-height: 0;
+      padding: 40px 20px 36px;
+    }
+
+    .sc-services .sc-service-card__title {
+      margin-top: 28px;
+      font-size: 24px;
+    }
+  }
+</style>
+
+<section class="sc-services" aria-labelledby="sc-services-title">
+  <h2 id="sc-services-title" class="sc-services__title">אז מה אפשר לעשות עבורכם?</h2>
+
+  <div class="sc-services__grid">
+
+    <a class="sc-service-card" href="#">
+      <div class="sc-service-card__image">
+        <img src="https://www.service-and-care.co.il/wp-content/uploads/REPLACE-post-surgery-care.jpg" alt="אחות מטפלת במטופלת בביתה" loading="lazy">
+      </div>
+      <h3 class="sc-service-card__title">השגחה וטיפול אחרי<br>ניתוח בבית או בביה"ח</h3>
+      <p class="sc-service-card__text">מתן טיפול תומך ע"י אחות מוסמכת</p>
+    </a>
+
+    <a class="sc-service-card" href="#">
+      <div class="sc-service-card__image">
+        <img src="https://www.service-and-care.co.il/wp-content/uploads/REPLACE-night-shifts.jpg" alt="מטפלת אוחזת בידיה של אישה מבוגרת" loading="lazy">
+      </div>
+      <h3 class="sc-service-card__title">שמירות לילה מקטן ועד<br>גדול כולל קשישים</h3>
+      <p class="sc-service-card__text">אחות בזמינות 24/7 לכל מצב רפואי</p>
+    </a>
+
+    <a class="sc-service-card" href="#">
+      <div class="sc-service-card__image">
+        <img src="https://www.service-and-care.co.il/wp-content/uploads/REPLACE-home-treatments.jpg" alt="מטופלת מקבלת עירוי בבית" loading="lazy">
+      </div>
+      <h3 class="sc-service-card__title">טיפולים עד הבית<br>למתקשים בניידות</h3>
+      <p class="sc-service-card__text">בדיקות דם ועירויים, זריקות, חבישות, ועוד..</p>
+    </a>
+
+  </div>
+</section>
